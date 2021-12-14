@@ -5,10 +5,11 @@
 
   <div class="form-inputs">
     <%= current_user.first_name %>
-   <%# <%= :teacher.user.last_name %>
+    <%= current_user.last_name%>
+    <%= ", Congratulations, you become a Teacher Assistant :-)!"%>
     <%= f.input :description %>
-     <%= f.input :city_name %>
-    <%= f.input :specialty, collection: Teacher::SPECIALITIES %>
+    <%= f.input :city_name %>
+    <%= f.input :specialty, collection: Teacher::SPECIALITIES, as: :select %>
     <%= f.input :price %>
   </div>
 

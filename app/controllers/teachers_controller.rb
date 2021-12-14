@@ -24,7 +24,7 @@ class TeachersController < ApplicationController
     @teacher.user = @user
 
     if @teacher.save
-      render :root, notice: 'Teacher was successfully created.'
+      redirect_to :root
     else
       render :new
     end
@@ -32,7 +32,7 @@ class TeachersController < ApplicationController
 
   def update
     if @teacher.update(teacher_params)
-      redirect_to :root, notice: 'Teacher was successfully updated.'
+      redirect_to :root
     else
       render :edit
     end
@@ -54,6 +54,6 @@ class TeachersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def teacher_params
-    params.require(:teacher).permit(:description, :price, :speciality, :city_name, :user_id)
+    params.require(:teacher).permit(:description, :price, :specialty, :city_name, :user_id)
   end
 end
