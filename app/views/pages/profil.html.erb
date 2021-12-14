@@ -1,7 +1,66 @@
-<h2>Salut <%= current_user.first_name %> ! </h2>
+<div class="container">
 
+  <h2 class="text-center">Hello <%= current_user.first_name %> ! </h2>
 
-<% current_user.bookings.each do |booking| %>
-<p> My appointement with <%= booking.teacher.user.first_name %> <%= booking.teacher.user.last_name %> </p>
-<p><%= booking.date.to_time.strftime('%B %e %Y' ) %></p>
-<% end %>
+  <div class="card-booking bookings-user d-flex flex-column my-4">
+
+    <div class="card-booking-title align-self-center">
+      <h2>MY <span class="highlight-red">BOOKINGS</span></h2>
+    </div>
+
+    <% current_user.bookings.each do |booking| %>
+
+      <div class="card-booking-body d-flex align-items-center my-2">
+
+        <div class="card-booking-avatar">
+          <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+        </div>
+
+        <div class="card-booking-info d-flex">
+
+          <div class="card-booking-detail px-3">
+            <p> My appointement with <%= booking.teacher.user.first_name %> <%= booking.teacher.user.last_name %> </p>
+            <p><%= booking.date.to_time.strftime('%B %e %Y') %></p>
+          </div>
+
+          <div class="card-booking-price px-3">
+            <p> Price <%= booking.teacher.price %>€ </p>
+          </div>
+
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+  <div class="card-booking bookings-user d-flex flex-column my-4">
+
+    <div class="card-booking-title align-self-center">
+      <h2>MY <span class="highlight-red">INTERVENTIONS</span></h2>
+    </div>
+
+    <% @teacher.bookings.each do |booking| %>
+
+      <div class="card-booking-body d-flex align-items-center my-2">
+
+        <div class="card-booking-avatar">
+          <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+        </div>
+
+        <div class="card-booking-info d-flex">
+
+          <div class="card-booking-detail px-3">
+            <p> My appointement with <%= booking.user.first_name %> <%= booking.user.last_name %> </p>
+            <p><%= booking.date.to_time.strftime('%B %e %Y' ) %></p>
+          </div>
+
+          <div class="card-booking-price px-3">
+            <p> Price <%= booking.teacher.price %>€ </p>
+          </div>
+
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+
+</div>
