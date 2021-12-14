@@ -1,0 +1,8 @@
+<% @teachers.each do |teacher|%>
+  <div>
+    <p> <%= current_user.first_name %> <%= current_user.last_name%></p>
+    <p> My description : <%= teacher.description %></p>
+    <p> My specialty : <%= teacher.specialty %></p>
+    <p> My price/day : <%= teacher.price %>€ </p>
+  </div>
+<% end %>
