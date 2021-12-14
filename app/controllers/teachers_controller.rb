@@ -13,7 +13,6 @@ class TeachersController < ApplicationController
   end
 
   def edit
-
   end
 
   def booking_teacher_list
@@ -41,7 +40,6 @@ class TeachersController < ApplicationController
 
   def destroy
   end
-
 
   private
   # Use callbacks to share common setup or constraints between actions.

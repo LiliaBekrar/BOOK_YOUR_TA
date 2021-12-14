@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:destroy, :show, :edit]
+  before_action :set_booking, only: [:destroy, :show, :edit, :update]
   before_action :set_teacher, only: [:new, :create]
   before_action :set_user, only: [:new, :create]
 
@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.teacher = @teacher
     @booking.user = @user
     if @booking.save
-      redirect_to user_path(@user)
+      redirect_to profil_path
     else
       render 'new'
     end

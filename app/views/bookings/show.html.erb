@@ -1,0 +1,4 @@
+<div>
+<p> My appointement with <%= @booking.teacher.user.first_name %> <%= @booking.teacher.user.last_name %> </p>
+<p><%= @booking.date.to_time.strftime('%B %e %Y' ) %></p>
+</div>
