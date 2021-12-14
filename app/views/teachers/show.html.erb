@@ -1,0 +1,8 @@
+  <div>
+    <h1> <%= @teacher.user.first_name %> <%= @teacher.user.last_name %></h1>
+    <p> My description : <%= @teacher.description %></p>
+    <p> My specialty : <%= @teacher.specialty %></p>
+    <p> My price/day : <%= @teacher.price %>€ </p>
+  </div>
+
+<%= link_to "Back", teachers_path %>
