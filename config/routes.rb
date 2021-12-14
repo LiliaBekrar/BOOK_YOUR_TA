@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :teachers, only: [:index, :show, :new, :create, :destroy] do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:destroy, :show]
-  resources :users, only: [:show]
+  resources :bookings, only: [:destroy, :show, :edit]
   get 'profil', to: 'pages#profil'
 end

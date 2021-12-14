@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: :destroy
+  before_action :set_booking, only: [:destroy, :show, :edit]
   before_action :set_teacher, only: [:new, :create]
   before_action :set_user, only: [:new, :create]
 
@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.teacher = @teacher
     @booking.user = @user
     if @booking.save
-      redirect_to user_path(@user), notice: 'Votre réservation a été effectuée.'
+      redirect_to user_path(@user)
     else
       render 'new'
     end
@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      redirect_to @booking, notice: 'La réservation a été correctement modifiée.'
+      redirect_to @booking
     else
       render :edit
     end
