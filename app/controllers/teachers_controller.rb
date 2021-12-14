@@ -13,6 +13,7 @@ class TeachersController < ApplicationController
   end
 
   def edit
+
   end
 
   def booking_teacher_list
@@ -24,7 +25,7 @@ class TeachersController < ApplicationController
     @teacher.user = @user
 
     if @teacher.save
-      redirect_to :root
+      redirect_to teacher_path(@teacher)
     else
       render :new
     end
@@ -32,7 +33,7 @@ class TeachersController < ApplicationController
 
   def update
     if @teacher.update(teacher_params)
-      redirect_to :root
+      redirect_to teacher_path(@teacher)
     else
       render :edit
     end
