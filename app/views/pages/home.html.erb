@@ -11,16 +11,11 @@
   <div>
     <%= render 'shared/card_home' %>
   </div>
-  <div class="footer">
-    <div class="footer-links">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <div class="footer-copyright">
-      This footer is made with <i class="fas fa-heart"></i> at Le Wagon
-    </div>
+  <div style="text-align: center; padding-top: 50px;">
+    <%= link_to teachers_path, :class => "btn btn-wagon" do  %>
+     Découvrir nos <span class="highlight-red"> supers TA !</span>
+     <% end %>
   </div>
+
+  <%= render 'shared/footer' %>
 </div>
