@@ -11,6 +11,7 @@
     <%= f.input :city_name %>
     <%= f.input :specialty, collection: Teacher::SPECIALITIES, as: :select %>
     <%= f.input :price %>
+    <%= f.input :photo, as: :file %>
   </div>
 
   <div class="form-actions">
