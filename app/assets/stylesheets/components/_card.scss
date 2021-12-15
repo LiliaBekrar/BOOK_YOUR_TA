@@ -1,5 +1,5 @@
 
-.card-booking-body {
+.card-booking-body, .card-teacher-body {
   overflow: hidden;
   height: 200px;
   background: white;
@@ -8,7 +8,7 @@
   flex: 1;
 }
 
-.card-booking-avatar img {
+.card-booking-avatar img, .card-teacher-avatar img {
   height: 200px;
   width: 200px;
   object-fit: cover;

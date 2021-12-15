@@ -1,8 +1,35 @@
-  <div>
-    <h1> <%= @teacher.user.first_name %> <%= @teacher.user.last_name %></h1>
-    <p> My description : <%= @teacher.description %></p>
-    <p> My specialty : <%= @teacher.specialty %></p>
-    <p> My price/day : <%= @teacher.price %>€ </p>
+<div class="container">
+
+  <div class="card-teacher teachers-user d-flex  my-4 justify-content-center">
+
+      <div class="card-teacher-body d-flex my-2 px-3">
+
+        <div class="card-teacher-avatar">
+          <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+        </div>
+
+        <div class="card-teacher-info d-flex">
+
+          <div class="card-teacher-detail px-3">
+            <p> <%= @teacher.user.first_name %> <%= @teacher.user.last_name%></p>
+            <p> <%= @teacher.description %></p>
+            <p>What I propose...</p>
+            <p> <%= @teacher.specialty %></p>
+          </div>
+
+          <div class="card-teacher-price px-3">
+            <p> Price <%= @teacher.price %>€ </p>
+          </div>
+
+          <%= link_to 'Book This TA',  new_teacher_booking_path(@teacher), class: 'btn btn-success align-self-start' %>
+
+
+        </div>
+
+      </div>
+
   </div>
 
-<%= link_to "Back", teachers_path %>
+  <%= link_to "Back", teachers_path %>
+
+</div>
