@@ -1,33 +1,4 @@
 
-// .card-booking-body {
-//   overflow: hidden;
-//   height: 200px;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   align-items: center;
-//   flex: 1;
-// }
-
-// .card-booking-avatar img {
-//   height: 200px;
-//   width: 200px;
-//   object-fit: cover;
-//   border-radius: 50%;
-//   padding: 10px;
-// }
-
-// .card-trip {
-//   overflow: hidden;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-// }
-
-.card-speciality > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-
 .card-booking-body, .card-teacher-body {
   overflow: hidden;
   height: 200px;
@@ -39,9 +10,24 @@
 
 .card-booking-avatar img, .card-teacher-avatar img {
   height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-speciality > img {
+  height: 200px;
   width: 100%;
   object-fit: cover;
 }
+
 
 .card-speciality h2 {
   font-size: 16px;
