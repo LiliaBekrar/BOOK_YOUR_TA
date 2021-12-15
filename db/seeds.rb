@@ -34,5 +34,8 @@ teacher = Teacher.new(description: "Je viens de loin, citoyen du monde, j'aime l
 teacher.save!
 p "#{teacher.user.first_name} created"
 
-user4 = user3 = User.create!(email: "isabelle@ta.com", first_name: "Isabelle", last_name: "Douin", password: "123456")
-p "#{user3.email} created"
+user4 = User.create!(email: "isabelle@ta.com", first_name: "Isabelle", last_name: "Douin", password: "123456")
+p "#{user4.email} created"
+
+user5 = User.create!(email: "georgia@ta.com", first_name: "Georgia", last_name: "Drai", password: "123456")
+p "#{user5.email} created"
