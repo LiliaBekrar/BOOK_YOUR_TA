@@ -10,6 +10,7 @@ class TeachersController < ApplicationController
   end
 
   def show
+    console
   end
 
   def edit
