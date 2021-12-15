@@ -28,6 +28,21 @@
   object-fit: cover;
 }
 
+.card-booking-body, .card-teacher-body {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  flex: 1;
+}
+
+.card-booking-avatar img, .card-teacher-avatar img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
 .card-speciality h2 {
   font-size: 16px;
   font-weight: bold;

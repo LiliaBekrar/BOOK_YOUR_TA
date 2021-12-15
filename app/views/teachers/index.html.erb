@@ -1,13 +1,37 @@
-<% @teachers.each do |teacher|%>
-  <div>
-    <p> <%= current_user.first_name %> <%= current_user.last_name%></p>
-    <p> My description : <%= teacher.description %></p>
-    <p> My specialty : <%= teacher.specialty %></p>
-    <p> My price/day : <%= teacher.price %>€ </p>
-  </div>
-<% end %>
+<div class="container">
 
-<div class="test">
+  <div class="card-booking bookings-user d-flex  my-4 justify-content-center">
+
+    <% @teachers.each do |teacher| %>
+
+      <div class="card-booking-body d-flex my-2 px-3">
+
+        <div class="card-booking-avatar">
+          <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+        </div>
+
+        <div class="card-booking-info d-flex">
+
+          <div class="card-booking-detail px-3">
+            <p> <%= teacher.user.first_name %> <%= teacher.user.last_name%></p>
+            <p> <%= teacher.specialty %></p>
+            <%= link_to 'Show me more',  teacher_path(teacher) %>
+
+          </div>
+
+          <div class="card-booking-price px-3">
+            <p> Price <%= teacher.price %>€ </p>
+          </div>
+
+          <%= link_to 'Book This TA',  new_teacher_booking_path(teacher), class: 'btn btn-success align-self-start' %>
+
+
+        </div>
+
+      </div>
+    <% end %>
+  </div>
 </div>
-<div class="test">
-</div>
+
+
+
