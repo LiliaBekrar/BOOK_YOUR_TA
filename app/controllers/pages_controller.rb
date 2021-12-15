@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   end
 
   def profil
-    @user = @current_user
+    @teacher = Teacher.find_by(user_id: current_user.id)
   end
 end
