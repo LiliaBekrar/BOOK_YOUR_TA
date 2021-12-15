@@ -5,7 +5,11 @@
       <div class="card-teacher-body d-flex my-2 px-3">
 
         <div class="card-teacher-avatar">
-          <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+          <%if @teacher.photo.attached?%>
+            <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/#{@teacher.photo.key}.jpg")%>
+          <% else %>
+            <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+          <% end %>
         </div>
 
         <div class="card-teacher-info d-flex">
