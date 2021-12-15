@@ -33,3 +33,6 @@ teacher = Teacher.new(description: "Je viens de loin, citoyen du monde, j'aime l
 # teacher.photo.key = "Pilou_dlkb9q"
 teacher.save!
 p "#{teacher.user.first_name} created"
+
+user4 = user3 = User.create!(email: "isabelle@ta.com", first_name: "Isabelle", last_name: "Douin", password: "123456")
+p "#{user3.email} created"
