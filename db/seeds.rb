@@ -26,7 +26,7 @@ teacher = Teacher.new(description: "Homme très dynamique spécialiste des group
 teacher.save!
 p "#{teacher.user.first_name} created"
 
-user3 = User.create!(email: "Pilou@ta.com", first_name: "Pierre Loic", last_name: "Guers", password: "123456")
+user3 = User.create!(email: "Pilou@ta.com", first_name: "Pierre Loic", last_name: "Pichon", password: "123456")
 p "#{user3.email} created"
 
 teacher = Teacher.new(description: "Je viens de loin, citoyen du monde, j'aime les photos non-contractuelles", specialty: "SQL", price: "60", city_name: "Lille", user_id: user3.id)
