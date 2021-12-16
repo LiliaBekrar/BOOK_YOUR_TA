@@ -14,12 +14,12 @@
 
   <body>
     <% if current_page?('/') %>
-    <%= render 'shared/navbar' %>
+      <%= render 'shared/navbar' %>
     <% else %>
-    <%= render 'shared/navbarpages' %>
+      <%= render 'shared/navbarpages' %>
     <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= render 'shared/footer' %>
 

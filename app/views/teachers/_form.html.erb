@@ -4,9 +4,6 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= current_user.first_name %>
-    <%= current_user.last_name%>
-    <%= ", Congratulations, you become a Teacher Assistant :-)!"%>
     <%= f.input :description %>
     <%= f.input :city_name %>
     <%= f.input :specialty, collection: Teacher::SPECIALITIES, as: :select %>
