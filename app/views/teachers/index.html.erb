@@ -1,36 +1,23 @@
+
+
 <div class="container">
-
 <h2> Découvrez tous nos <span class= "highlight-red"> Supers TA </span></h2>
-
-  <div class="card-booking bookings-user my-4">
-
+  <div class="cards-teachers-list d-flex justify-content-between">
     <% @teachers.each do |teacher| %>
-
-      <div class="card-booking-body d-flex justify-content-between my-4 p-3">
-
-        <div class="card-booking-avatar">
-          <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1639501034/snnvw9r2am4ln8d8psfu.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false)%>
-        </div>
-
-        <%# <div class="card-booking-info my-2 px-3"> %>
-
-          <div class="card-booking-detail p-3">
-            <p> <%= teacher.user.first_name %> <%= teacher.user.last_name%></p>
+      <div class="cards-teachers d-flex flex-column align-items-center">
+        <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1639501034/snnvw9r2am4ln8d8psfu.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false)%>
+          <div class='m-1 border-bottom-2'>
+            <p><strong><%= teacher.user.first_name %></strong></p>
             <p> <%= teacher.specialty %></p>
-            <%= link_to 'Show me more',  teacher_path(teacher), class: 'btn btn-danger'%>
           </div>
-
-          <div class="card-booking-price p-3">
-            <p> Price <%= teacher.price %>€ </p>
+          <div class="cards-price-teacher d-flex align-self-center">
+            <p class="d-flex align-items-center p-2"><%= teacher.price %></p>
           </div>
-
-          <div>
-          <%= link_to 'Book This TA',  new_teacher_booking_path(teacher), class: 'btn btn-success align-self-start' %>
-          </div>
-
-        <%# </div> %>
-
+          <%= link_to 'Open Ticket',  teacher_path(teacher), class: 'btn btn-danger'%>
       </div>
     <% end %>
+    <div>
+      <img id="map" src='https://api.mapbox.com/[...]?access_token=YOUR-TOKEN-HERE'>
+    </div>
   </div>
 </div>
