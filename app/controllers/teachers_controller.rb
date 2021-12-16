@@ -6,7 +6,11 @@ class TeachersController < ApplicationController
   end
 
   def index
-    @teachers = Teacher.all
+    if params[:search].present?
+      @teachers = Teacher.search(params[:search])
+    else
+      @teachers = Teacher.all
+    end
   end
 
   def show

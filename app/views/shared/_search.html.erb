@@ -1,6 +1,6 @@
-<%= simple_form_for :search, url: root_path, method: :get do |f| %>
+<%= simple_form_for :search, url: teachers_path, method: :get do |f| %>
     <%= f.input :specialty, collection: Teacher::SPECIALITIES, as: :select, label: false%>
-    <%= f.input :city_name, collection: @cities, as: :select, label: false%>
+    <%= f.input :city_name, collection:Teacher::CITIES, as: :select, label: false%>
     <button name="button" type="submit" class="btn btn-danger">
       <i class="fas fa-search"></i>
     </button>
