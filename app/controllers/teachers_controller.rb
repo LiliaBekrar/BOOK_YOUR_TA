@@ -10,11 +10,9 @@ class TeachersController < ApplicationController
   end
 
   def show
-    console
   end
 
   def edit
-
   end
 
   def booking_teacher_list
