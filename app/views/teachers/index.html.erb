@@ -1,41 +1,29 @@
 <div class="container">
-
-  <h2> Découvrez tous nos <span class= "highlight-red"> Supers TA </span></h2>
-
-  <div class="card-booking bookings-user my-4">
-    <div id="map"
-      style="width: 50%; height: 300px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-
+<h2> Découvrez tous nos <span class= "highlight-red"> Supers TA </span></h2>
+  <div class="cards-teachers-list d-flex justify-content-between">
     <% @teachers.each do |teacher| %>
-
-      <div class="card-booking-body d-flex justify-content-between my-4 p-3">
-
-        <div class="card-booking-avatar">
+      <div class="cards-teachers d-flex flex-column align-items-center">
           <%if teacher.photo.attached? %>
             <%= cl_image_tag("#{teacher.photo.key}.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
           <% else %>
             <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false)%>
-           <% end %>
-        </div>
-
-        <%# <div class="card-booking-info my-2 px-3"> %>
-
-        <div class="card-booking-detail p-3">
-          <p> <%= teacher.user.first_name %> <%= teacher.user.last_name%></p>
-          <p> <%= teacher.specialty %></p>
-          <%= link_to 'Show me more',  teacher_path(teacher), class: 'btn btn-danger'%>
-        </div>
-
-        <div class="card-booking-price p-3">
-          <p> Price <%= teacher.price %>€ </p>
-        </div>
-
-        <%= link_to 'Book This TA',  new_teacher_booking_path(teacher), class: 'btn btn-success align-self-start' %>
-      <%# </div> %>
+          <% end %>
+            <p><strong><%= teacher.user.first_name %></strong></p>
+            <p> <%= teacher.specialty %></p>
+          </div>
+          <div class="cards-price-teacher d-flex align-self-center">
+            <p class="d-flex align-items-center p-2"><%= teacher.price %></p>
+          </div>
+          <%= link_to 'Open Ticket',  teacher_path(teacher), class: 'btn btn-danger'%>
+      </div>
     <% end %>
-
+    <div>
+      <div class="card-booking bookings-user my-4">
+        <div id="map"
+          style="width: 50%; height: 300px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+    </div>
   </div>
 </div>
