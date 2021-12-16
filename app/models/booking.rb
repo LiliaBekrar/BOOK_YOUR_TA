@@ -4,4 +4,8 @@ class Booking < ApplicationRecord
 
   validates :date, presence: true, uniqueness: { scope: :user_id }
   validates :teacher_id, uniqueness: { scope: :date }
+
+  def confirm_booking
+    self.accepted == true
+  end
 end

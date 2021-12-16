@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:destroy, :show, :edit, :update]
+  before_action :set_booking, only: [:destroy, :show, :edit, :update, :confirm]
   before_action :set_teacher, only: [:new, :create]
   before_action :set_user, only: [:new, :create]
 
@@ -8,6 +8,12 @@ class BookingsController < ApplicationController
   end
 
   def edit
+  end
+
+  def confirm
+    @booking.accepted = true
+    @booking.save
+    redirect_to profil_path
   end
 
   def create
@@ -37,7 +43,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:teacher_id, :user_id, :date)
+    params.require(:booking).permit(:teacher_id, :user_id, :date, :accepted)
   end
 
   def set_booking

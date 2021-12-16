@@ -13,36 +13,82 @@
 
     <% else %>
 
+    <div class="non-accepted">
+      <h3>Waiting confirm</h3>
       <% current_user.bookings.each do |booking| %>
+        <% unless booking.accepted  %>
+            <div class="card-booking-body d-flex align-items-center my-2 px-3">
 
-        <div class="card-booking-body d-flex align-items-center my-2 px-3">
+              <div class="card-booking-avatar">
+                <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+              </div>
+
 
           <div class="card-booking-avatar">
-            <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+            <%if booking.teacher.photo.attached? %>
+              <%= cl_image_tag("#{booking.teacher.photo.key}.jpg") %>
+            <% else %>
+              <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg")%>
+            <% end %>
           </div>
 
-          <div class="card-booking-info d-flex">
 
-            <div class="card-booking-detail px-3">
-              <p> My appointment with <%= booking.teacher.user.first_name %> <%= booking.teacher.user.last_name %> </p>
-              <p><%= booking.date.to_time.strftime('%B %e %Y') %></p>
+                <div class="card-booking-detail px-3">
+                  <p> My appointment with <%= booking.teacher.user.first_name %> <%= booking.teacher.user.last_name %> </p>
+                  <p><%= booking.date.to_time.strftime('%B %e %Y') %></p>
+                </div>
+
+                <div class="card-booking-price px-3">
+                  <p> Price <%= booking.teacher.price %>€ </p>
+                </div>
+
+                <%= link_to 'Delete This Booking', booking_path(booking), method: :delete, class: 'btn btn-danger align-self-start', data: { confirm: 'Are you sure you want to delete this booking?' } %>
+
+              </div>
+
             </div>
-
-            <div class="card-booking-price px-3">
-              <p> Price <%= booking.teacher.price %>€ </p>
-            </div>
-
-            <%= link_to 'Delete This Booking', booking_path(booking), method: :delete, class: 'btn btn-danger align-self-start', data: { confirm: 'Are you sure you want to delete this booking?' } %>
-
-          </div>
-
-        </div>
+        <% end %>
       <% end %>
+    </div>
+
+    <div class="accepted">
+      <h3>Accepted</h3>
+      <% current_user.bookings.each do |booking| %>
+        <% if booking.accepted  %>
+            <div class="card-booking-body d-flex align-items-center my-2 px-3">
+
+              <div class="card-booking-avatar">
+                <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+              </div>
+
+              <div class="card-booking-info d-flex">
+
+                <div class="card-booking-detail px-3">
+                  <p> My appointment with <%= booking.teacher.user.first_name %> <%= booking.teacher.user.last_name %> </p>
+                  <p><%= booking.date.to_time.strftime('%B %e %Y') %></p>
+                </div>
+
+                <div class="card-booking-price px-3">
+                  <p> Price <%= booking.teacher.price %>€ </p>
+                </div>
+
+                <%= link_to 'Delete This Booking', booking_path(booking), method: :delete, class: 'btn btn-danger align-self-start', data: { confirm: 'Are you sure you want to delete this booking?' } %>
+
+              </div>
+
+            </div>
+        <% end %>
+      <% end %>
+    </div>
+
+
     <% end %>
   </div>
 
+
   <div class="card-booking bookings-user d-flex flex-column my-4 align-items-center">
-    
+
+
       <div class="card-booking-title align-self-center">
         <h2>MY <span class="highlight-red">INTERVENTIONS</span></h2>
       </div>
@@ -51,32 +97,82 @@
         <%= link_to 'Became a TA', new_teacher_path%>
 
       <% else %>
-        <% @teacher.bookings.each do |booking| %>
+        <div class="non-accepted">
+          <h3>Waiting for your confirm</h3>
+          <% @teacher.bookings.each do |booking| %>
 
-          <div class="card-booking-body d-flex align-items-center my-2 px-3">
+            <% unless booking.accepted  %>
+              <div class="card-booking-body d-flex align-items-center my-2 px-3">
+
 
             <div class="card-booking-avatar">
-              <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+              <% if Teacher.find_by(user_id: booking.user.id).nil? %>
+                <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg")%>
+              <% elsif Teacher.find_by(user_id: booking.user.id).photo.attached? %>
+                <%= cl_image_tag("#{Teacher.find_by(user_id: booking.user.id).photo.key}.jpg") %>
+              <% else %>
+                <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg")%>
+              <% end %>
             </div>
 
-            <div class="card-booking-info d-flex">
 
-              <div class="card-booking-detail px-3">
-                <p> My appointment with <%= booking.user.first_name %> <%= booking.user.last_name %> </p>
-                <p><%= booking.date.to_time.strftime('%B %e %Y' ) %></p>
+                <div class="card-booking-info d-flex">
+
+                  <div class="card-booking-detail px-3">
+                    <p> My appointment with <%= booking.user.first_name %> <%= booking.user.last_name %> </p>
+                    <p><%= booking.date.to_time.strftime('%B %e %Y' ) %></p>
+                  </div>
+
+                  <div class="card-booking-price px-3">
+                    <p> Price <%= booking.teacher.price %>€ </p>
+                    <p> confirm : <%= booking.accepted %></p>
+                  </div>
+
+                  <div class="card-booking-price px-3">
+                    <%= link_to 'Delete This Booking', booking_path(booking), method: :delete, class: 'btn btn-danger align-self-start m-1', data: { confirm: 'Are you sure you want to delete this booking?' } %>
+                    <%= link_to 'Confirm This Booking', confirm_booking_path(booking), class: 'btn btn-success align-self-start m-1'%>
+                  </div>
+
+                </div>
+
               </div>
+            <% end %>
+          <% end %>
+        </div>
 
-              <div class="card-booking-price px-3">
-                <p> Price <%= booking.teacher.price %>€ </p>
+        <div class="accepted">
+          <h3>Accepted</h3>
+          <% @teacher.bookings.each do |booking| %>
+
+            <% if booking.accepted  %>
+              <div class="card-booking-body d-flex align-items-center my-2 px-3">
+
+                <div class="card-booking-avatar">
+                  <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+                </div>
+
+                <div class="card-booking-info d-flex">
+
+                  <div class="card-booking-detail px-3">
+                    <p> My appointment with <%= booking.user.first_name %> <%= booking.user.last_name %> </p>
+                    <p><%= booking.date.to_time.strftime('%B %e %Y' ) %></p>
+                  </div>
+
+                  <div class="card-booking-price px-3">
+                    <p> Price <%= booking.teacher.price %>€ </p>
+                    <p> confirm : <%= booking.accepted %></p>
+                  </div>
+
+                  <div class="card-booking-price px-3">
+                    <%= link_to 'Delete This Booking', booking_path(booking), method: :delete, class: 'btn btn-danger align-self-start m-1', data: { confirm: 'Are you sure you want to delete this booking?' } %>
+                  </div>
+
+                </div>
+
               </div>
-
-              <%= link_to 'Delete This Booking', booking_path(booking), method: :delete, class: 'btn btn-danger align-self-start', data: { confirm: 'Are you sure you want to delete this booking?' } %>
-
-
-            </div>
-
-          </div>
-        <% end %>
+            <% end %>
+          <% end %>
+        </div>
       <% end %>
   </div>
 

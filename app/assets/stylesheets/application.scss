@@ -11,9 +11,14 @@
 // Your CSS partials
 @import "components/index";
 @import "components/card";
+@import "components/map";
 @import "pages/index";
 
 .highlight-red {
   background-color:#FFE0E1;
   color: red;
+}
+
+body {
+  background-color: white;
 }

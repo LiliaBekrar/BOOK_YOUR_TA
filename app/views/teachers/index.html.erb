@@ -1,12 +1,13 @@
-
-
 <div class="container">
 <h2> Découvrez tous nos <span class= "highlight-red"> Supers TA </span></h2>
   <div class="cards-teachers-list d-flex justify-content-between">
     <% @teachers.each do |teacher| %>
       <div class="cards-teachers d-flex flex-column align-items-center">
-        <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1639501034/snnvw9r2am4ln8d8psfu.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false)%>
-          <div class='m-1 border-bottom-2'>
+          <%if teacher.photo.attached? %>
+            <%= cl_image_tag("#{teacher.photo.key}.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+          <% else %>
+            <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false)%>
+          <% end %>
             <p><strong><%= teacher.user.first_name %></strong></p>
             <p> <%= teacher.specialty %></p>
           </div>
@@ -17,7 +18,12 @@
       </div>
     <% end %>
     <div>
-      <img id="map" src='https://api.mapbox.com/[...]?access_token=YOUR-TOKEN-HERE'>
+      <div class="card-booking bookings-user my-4">
+        <div id="map"
+          style="width: 50%; height: 300px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
     </div>
   </div>
 </div>
