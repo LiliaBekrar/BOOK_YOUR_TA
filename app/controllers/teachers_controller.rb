@@ -13,7 +13,6 @@ class TeachersController < ApplicationController
   end
 
   def edit
-
   end
 
   def booking_teacher_list
