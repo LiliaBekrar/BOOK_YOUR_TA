@@ -5,9 +5,9 @@
       <div class="card-teacher-body d-flex my-2 px-3">
         <div class="card-teacher-avatar">
           <%if @teacher.photo.attached? %>
-            <%= cl_image_tag("#{@teacher.photo.key}.jpg", :width => 100, :height => 150, :crop => :fill) %>
+            <%= cl_image_tag("#{@teacher.photo.key}.jpg") %>
           <% else %>
-            <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+            <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg")%>
           <% end %>
         </div>
 
