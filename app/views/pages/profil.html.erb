@@ -19,9 +19,6 @@
         <% unless booking.accepted  %>
             <div class="card-booking-body d-flex align-items-center my-2 px-3">
 
-              <div class="card-booking-avatar">
-                <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
-              </div>
 
 
           <div class="card-booking-avatar">
@@ -57,8 +54,12 @@
         <% if booking.accepted  %>
             <div class="card-booking-body d-flex align-items-center my-2 px-3">
 
-              <div class="card-booking-avatar">
-                <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+               <div class="card-booking-avatar">
+                <%if booking.teacher.photo.attached? %>
+                  <%= cl_image_tag("#{booking.teacher.photo.key}.jpg") %>
+                <% else %>
+                   <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg")%>
+                <% end %>
               </div>
 
               <div class="card-booking-info d-flex">
@@ -148,7 +149,11 @@
               <div class="card-booking-body d-flex align-items-center my-2 px-3">
 
                 <div class="card-booking-avatar">
-                  <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+                  <%if booking.teacher.photo.attached? %>
+                    <%= cl_image_tag("#{booking.teacher.photo.key}.jpg") %>
+                  <% else %>
+                    <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg")%>
+                  <% end %>
                 </div>
 
                 <div class="card-booking-info d-flex">
