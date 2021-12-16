@@ -18,7 +18,11 @@
         <div class="card-booking-body d-flex align-items-center my-2 px-3">
 
           <div class="card-booking-avatar">
-            <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+            <%if booking.teacher.photo.attached? %>
+              <%= cl_image_tag("#{booking.teacher.photo.key}.jpg") %>
+            <% else %>
+              <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg")%>
+            <% end %>
           </div>
 
           <div class="card-booking-info d-flex">
@@ -42,7 +46,7 @@
   </div>
 
   <div class="card-booking bookings-user d-flex flex-column my-4 align-items-center">
-    
+
       <div class="card-booking-title align-self-center">
         <h2>MY <span class="highlight-red">INTERVENTIONS</span></h2>
       </div>
@@ -56,7 +60,13 @@
           <div class="card-booking-body d-flex align-items-center my-2 px-3">
 
             <div class="card-booking-avatar">
-              <%= cl_image_tag("https://res.cloudinary.com/dbbfawc0n/image/upload/v1639501034/snnvw9r2am4ln8d8psfu.jpg")%>
+              <% if Teacher.find_by(user_id: booking.user.id).nil? %>
+                <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg")%>
+              <% elsif Teacher.find_by(user_id: booking.user.id).photo.attached? %>
+                <%= cl_image_tag("#{Teacher.find_by(user_id: booking.user.id).photo.key}.jpg") %>
+              <% else %>
+                <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg")%>
+              <% end %>
             </div>
 
             <div class="card-booking-info d-flex">
