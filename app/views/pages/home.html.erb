@@ -1,8 +1,6 @@
-
 <div class="test">
   <%= render 'shared/banner' %>
 </div>
-
 
 <div class="container">
   <div class="texte" >
@@ -11,13 +9,9 @@
   <div>
     <%= render 'shared/card_home' %>
   </div>
-  <div style="text-align: center; padding-top: 50px;">
-    <%= link_to teachers_path, :class => "btn btn-wagon" do  %>
+  <div style="text-align: center;">
+    <%= link_to teachers_path, :class => "btn btn-wagon btn-TA" do  %>
      Découvrir nos <span class="highlight-red"> supers TA !</span>
      <% end %>
-  </div>
-
-  <div>
-    <%= render 'shared/footer' %>
   </div>
 </div>
