@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @cities = Teacher.all.map { |teacher| teacher.city_name }.uniq
   end
 
   def profil
