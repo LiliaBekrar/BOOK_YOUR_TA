@@ -7,7 +7,6 @@
     <div class="card-booking-title align-self-center">
       <h2>MY <span class="highlight-red">BOOKINGS</span></h2>
     </div>
-  <% console %>
     <% if current_user.bookings == [] %>
         <h4>Sorry you don't have any booking yet...</h4>
         <%= link_to 'Book a TA', teachers_path%>
