@@ -11,7 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "components/card";
+@import "components/map";
 @import "pages/index";
+// @import "booking/show"
 
 .highlight-red {
   background-color:#FFE0E1;
@@ -20,4 +22,40 @@
 
 body {
   background-color: white;
+}
+
+h2 {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+
+// PAGE BOOKING
+
+.card-booking {
+  height: 450px;
+}
+.card-booking-title h2 {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+.card-booking-body {
+  margin: 50px;
+}
+
+.card-booking-info {
+  margin: 10px;
+}
+
+// PAGE FORM TA
+p.form-paragraph {
+  font-family: Raleway;
+  font-style: normal;
+  font-size: 20px;
+  margin-bottom: 35px;
 }
