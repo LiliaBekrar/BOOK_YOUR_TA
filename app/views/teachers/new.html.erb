@@ -1,5 +1,10 @@
-<h1>New Teacher</h1>
+<div class="container">
 
-<%= render 'form', teacher: @teacher %>
+  <h2>
+    Welcome <span class="highlight-red"><%= current_user.first_name %></span>  <%= current_user.last_name%> 👋🏻
+  </h2>
+  <p class="form-paragraph">if you're interested in teaching to super geeks, sign the form to become a TA... </p>
+  <%= render 'form', teacher: @teacher %>
 
-<%= link_to 'Back', root_path %>
+  <%= link_to 'Back', root_path %>
+</div>

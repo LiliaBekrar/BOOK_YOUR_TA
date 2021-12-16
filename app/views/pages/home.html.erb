@@ -2,14 +2,16 @@
   <%= render 'shared/banner' %>
 </div>
 
-<div class="container">
+<div class="mae-container">
   <div class="texte" >
     <h1>Besoin d’aide dans l’une de ces <span class="highlight-red"> thématiques ?</span></h1>
   </div>
+
   <div>
-    <%= render 'shared/card_home' %>
+      <%= render 'shared/card_home' %>
   </div>
-  <div style="text-align: center;">
+
+  <div style="text-align: center">
     <%= link_to teachers_path, :class => "btn btn-wagon btn-TA" do  %>
      Découvrir nos <span class="highlight-red"> supers TA !</span>
      <% end %>
