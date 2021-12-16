@@ -5,9 +5,17 @@
   z-index: 3;
   position: sticky;
   top: 0;
-  a {
-    color: white;
-  }
+}
+
+.navbar-lewagon > a {
+  color: white;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  margin: 0 15px;
 }
 
 .navbar-lewagon .navbar-collapse {

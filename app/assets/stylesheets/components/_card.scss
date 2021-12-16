@@ -26,6 +26,8 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 
@@ -63,23 +65,33 @@
 }
 
 
-.ruby {
-  padding: 20px;
-  z-index: 3;
-}
-
-.javascript {
-  padding: 20px;
+.card-speciality  {
+  height: fit-content;
+  padding: 0 0 20px 0;
+  margin: 0 20px;
+  color: white;
 }
 
 .rails {
-  padding: 20px;
+  background: #F15423;
+  border-radius: 10px;
+}
+
+.ruby {
+  background: #51000F;
+  border-radius: 10px;
+}
+
+.javascript {
+  background: #F9DD3C;
+  border-radius: 10px;
+  color: black;
 }
 
 // .card-speciality-ruby {
-//   // width: 305px;
-//   // height: 399px;
-//   // // left: -200px;
-//   // background: #51000F;
-//   // border-radius: 10px;
+//   width: 305px;
+//   height: 399px;
+//   // left: -200px;
+//   background: #51000F;
+//   border-radius: 10px;
 // }
