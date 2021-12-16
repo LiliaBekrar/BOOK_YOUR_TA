@@ -1,8 +1,13 @@
 <div class="container">
 
-<h2> Découvrez tous nos <span class= "highlight-red"> Supers TA </span></h2>
+  <h2> Découvrez tous nos <span class= "highlight-red"> Supers TA </span></h2>
 
   <div class="card-booking bookings-user my-4">
+    <div id="map"
+      style="width: 50%; height: 300px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 
     <% @teachers.each do |teacher| %>
 
@@ -18,23 +23,19 @@
 
         <%# <div class="card-booking-info my-2 px-3"> %>
 
-          <div class="card-booking-detail p-3">
-            <p> <%= teacher.user.first_name %> <%= teacher.user.last_name%></p>
-            <p> <%= teacher.specialty %></p>
-            <%= link_to 'Show me more',  teacher_path(teacher), class: 'btn btn-danger'%>
-          </div>
+        <div class="card-booking-detail p-3">
+          <p> <%= teacher.user.first_name %> <%= teacher.user.last_name%></p>
+          <p> <%= teacher.specialty %></p>
+          <%= link_to 'Show me more',  teacher_path(teacher), class: 'btn btn-danger'%>
+        </div>
 
-          <div class="card-booking-price p-3">
-            <p> Price <%= teacher.price %>€ </p>
-          </div>
+        <div class="card-booking-price p-3">
+          <p> Price <%= teacher.price %>€ </p>
+        </div>
 
-          <div>
-          <%= link_to 'Book This TA',  new_teacher_booking_path(teacher), class: 'btn btn-success align-self-start' %>
-          </div>
-
-        <%# </div> %>
-
-      </div>
+        <%= link_to 'Book This TA',  new_teacher_booking_path(teacher), class: 'btn btn-success align-self-start' %>
+      <%# </div> %>
     <% end %>
+
   </div>
 </div>
