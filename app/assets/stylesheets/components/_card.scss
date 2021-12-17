@@ -115,7 +115,9 @@
   margin-top: 20px;
   padding: 10px 10px;
   text-align: center;
+  height: 300px;
    img {
+     object-fit: cover;
      height: 80px;
      width: 80px;
    }
@@ -128,8 +130,11 @@
   right: -17px;
   background-color: whitesmoke;
   border-radius: 50%;
-  height: 45px;
-  width: 45px;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
       p {
         position: relative;
@@ -139,10 +144,22 @@
 }
 
 
-// .card-speciality-ruby {
-//   width: 305px;
-//   height: 399px;
-//   // left: -200px;
-//   background: #51000F;
-//   border-radius: 10px;
-// }
+// PAGE BOOKING
+
+.card-booking {
+  height: 450px;
+}
+.card-booking-title h2 {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+.card-booking-body {
+  margin: 50px;
+}
+
+.card-booking-info {
+  margin: 10px;
+}

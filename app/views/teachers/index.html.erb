@@ -19,10 +19,11 @@
           <p> <%= teacher.specialty %></p>
         </div>
         <div class="cards-price-teacher d-flex align-self-center">
-          <p class="d-flex align-items-center p-2"><%= teacher.price %></p>
+          <p><strong><%= teacher.price.floor %> €</strong></p>
         </div>
         <div>
-          <%= link_to 'Open Ticket',  teacher_path(teacher), class: 'btn btn-danger'%>
+          <%= link_to 'Show Details',  teacher_path(teacher), class: 'btn btn-primary my-1'%>
+          <%= link_to 'Book Me!',  new_teacher_booking_path(teacher), class: 'btn btn-danger'%>
         </div>
       </div>
       <% end %>

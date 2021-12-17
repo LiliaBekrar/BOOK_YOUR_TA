@@ -31,8 +31,12 @@ h2 {
   font-size: 48px;
 }
 
+// GESTION MARGIN DIV CENTRALE
+.container-margin {
+  margin: 60px;
+}
 
-// PAGE BOOKING
+// // PAGE BOOKING
 
 .card-booking-title h2 {
   font-family: Raleway;
@@ -41,13 +45,23 @@ h2 {
   font-size: 48px;
 }
 
-.card-booking-body {
-  margin: 50px;
-}
+// .card-booking {
+//   height: 450px;
+// }
+// .card-booking-title h2 {
+//   font-family: Raleway;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 48px;
+// }
 
-.card-booking-info {
-  margin: 10px;
-}
+// .card-booking-body {
+//   margin: 50px;
+// }
+
+// .card-booking-info {
+//   margin: 10px;
+// }
 
 // PAGE FORM TA
 p.form-paragraph {

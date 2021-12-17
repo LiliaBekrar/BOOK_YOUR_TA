@@ -1,8 +1,10 @@
-<%= simple_form_for :search, url: teachers_path, method: :get do |f| %>
-    <%= f.input :specialty, collection: Teacher::SPECIALITIES, as: :select, label: false%>
-    <%= f.input :city_name, collection:Teacher::CITIES, as: :select, label: false%>
-    <button name="button" type="submit" class="btn btn-danger">
-      <i class="fas fa-search"></i>
-    </button>
-  </div>
-<% end %>
+<div class="search d-flex">
+  <%= simple_form_for :search, url: teachers_path, method: :get do |f| %>
+      <%= f.input :specialty, collection: Teacher::SPECIALITIES, as: :select, :include_blank => "Select the speciality", label: false%>
+      <%= f.input :city_name, collection:Teacher::CITIES, as: :select, :include_blank => "Select a city", label: false%>
+      <button name="button" type="submit" class="btn btn-danger">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  <% end %>
+</div>
