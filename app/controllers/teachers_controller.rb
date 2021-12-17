@@ -56,6 +56,8 @@ class TeachersController < ApplicationController
   end
 
   def destroy
+    @teacher.destroy
+    redirect_to profil_path
   end
 
 
