@@ -138,10 +138,22 @@
 }
 
 
-// .card-speciality-ruby {
-//   width: 305px;
-//   height: 399px;
-//   // left: -200px;
-//   background: #51000F;
-//   border-radius: 10px;
-// }
+// PAGE BOOKING
+
+.card-booking {
+  height: 450px;
+}
+.card-booking-title h2 {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+.card-booking-body {
+  margin: 50px;
+}
+
+.card-booking-info {
+  margin: 10px;
+}

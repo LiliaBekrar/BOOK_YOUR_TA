@@ -20,7 +20,9 @@
     <% end %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-    <%= yield %>
+      <div class="container-margin">
+        <%= yield %>
+      </div>
     <%= render 'shared/footer' %>
 
   </body>
