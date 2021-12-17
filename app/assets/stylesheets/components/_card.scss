@@ -92,22 +92,24 @@
 // cards qui regroupe le list des teachers. (voir aussi container)
 .cards-teachers-list {
   flex-grow: 1;
-  width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+  width: 300px;
 }
 
 //  hauteur de ma map
-#map {
-  height: 100vh;
-  position: sticky;
-  top: 0;
-}
+// .map {
+//   position: sticky;
+//   top: 0;
+// }
 
 // cards de mes teachers
 .cards-teachers {
   position: relative;
   background-color:  #d7d7d789;
   border-radius: 5px;
-  width: 150px;
   margin-right: 10px;
   margin-top: 20px;
   padding: 10px 10px;
