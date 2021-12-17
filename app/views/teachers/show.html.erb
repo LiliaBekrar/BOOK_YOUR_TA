@@ -7,7 +7,7 @@
           <%if @teacher.photo.attached? %>
             <%= cl_image_tag("#{@teacher.photo.key}.jpg") %>
           <% else %>
-            <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg")%>
+            <%= image_tag("TomLeTrain.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
           <% end %>
         </div>
 
