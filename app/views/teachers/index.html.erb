@@ -3,6 +3,7 @@
 
   <div class="cards-teachers-list">
     <% @teachers.each do |teacher| %>
+      <% unless teacher.user == current_user  %>
       <div class="cards-teachers d-flex flex-column align-items-center">
         <div>
           <%if teacher.photo.attached? %>
@@ -20,6 +21,7 @@
           <%= link_to 'Open Ticket',  teacher_path(teacher), class: 'btn btn-danger'%>
         </div>
       </div>
+      <% end %>
     <% end %>
     </div>
         <div id="map" class="position-sticky"

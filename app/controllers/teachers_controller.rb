@@ -6,13 +6,18 @@ class TeachersController < ApplicationController
   end
 
   def index
-    @teachers = Teacher.all
+    if params[:search].present?
+      @teachers = search_method(params[:search])
+    else
+      @teachers = Teacher.all
+    end
+
     @markers = @teachers.geocoded.map do |teacher|
       if teacher.photo.attached?
         image = Cloudinary::Utils.cloudinary_url(teacher.photo.key).gsub('upload', 'upload/v1/development')
       else
         image = Cloudinary::Utils.cloudinary_url("snnvw9r2am4ln8d8psfu_bzaor1.jpg").gsub('upload', 'upload/v1/development')
-     end
+      end
 
       {
         lat: teacher.latitude,
@@ -51,10 +56,22 @@ class TeachersController < ApplicationController
   end
 
   def destroy
+    @teacher.destroy
+    redirect_to profil_path
   end
 
 
   private
+
+  def search_method(params)
+    if params["city_name"] == ""
+      Teacher.search(params["specialty"])
+    elsif params["specialty"] == ""
+      Teacher.search(params["city_name"])
+    else
+      Teacher.search(params["specialty"]).search(params["city_name"])
+    end
+  end
   # Use callbacks to share common setup or constraints between actions.
   def set_teacher
     @teacher = Teacher.find(params[:id])

@@ -24,8 +24,11 @@
             <p> Price <%= @teacher.price %>€ </p>
           </div>
 
-          <%= link_to 'Book This TA',  new_teacher_booking_path(@teacher), class: 'btn btn-success align-self-start' %>
-
+          <% if @teacher.user == current_user %>
+            <%= link_to 'Stop being TA', teacher_path(@teacher), method: :delete, class: "btn btn-danger align-self-start", data: { confirm: 'Are you sure you want to stop being a TA ?' } %>
+          <% else %>
+            <%= link_to 'Book This TA',  new_teacher_booking_path(@teacher), class: 'btn btn-success align-self-start' %>
+          <% end %>
 
         </div>
 
