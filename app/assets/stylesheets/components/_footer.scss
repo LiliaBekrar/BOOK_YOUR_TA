@@ -60,13 +60,13 @@
 }
 
 .first_row {
-  width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin: 30px;
+  margin-right: 100px;
   .simple_form {
-    flex: 0 0 70%;
+    flex: 0 0 120%;
   }
   .form-group {
     margin: 0;

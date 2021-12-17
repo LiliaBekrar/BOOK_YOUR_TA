@@ -22,6 +22,14 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-// ::placeholder {
-//     color: black;
-// }
+.simple_form.search  {
+  display: flex;
+  justify-content: space-between;
+  width: 39%;
+}
+
+.simple_form .btn-danger {
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+}
