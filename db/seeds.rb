@@ -30,10 +30,6 @@ p "#{teacher.user.first_name} created"
 user3 = User.create!(email: "Pilou@ta.com", first_name: "Pierre Loic", last_name: "Pichon", password: "123456")
 p "#{user3.email} created"
 
-user6 = User.create!(email: "hugo@ta.com", first_name: "Hugo", last_name: "Mancini", password: "123456")
-p "#{user5.email} created"
-
-teacher5 = Teacher.create!(description: "Graduated from a business school, I worked for two years in a startup as business analyst and then as business developper. I then opened a bar with some close friends two years ago. Main interests are skateboarding, music and chess.", specialty: "RAILS", price: "56", city_name: "TLyon", user_id: user5.id)
 
 teacher3 = Teacher.new(description: "Data Scientist / Ruby on Rails hobbyist Call me Pilou!", specialty: "SQL", price: "60", city_name: "Lille", user_id: user3.id)
 teacher3.photo.attach(io: File.open(Rails.root.join('app/assets/images/Pilou.jpg')), filename: 'Pilou.jpg')
@@ -48,6 +44,10 @@ p "#{user5.email} created"
 
 teacher4 = Teacher.create!(description: "Née à Marseille, travaille dans le transport et la logistique depuis 15 ans. On m’a mis en javascript mais perso choisissez JanLou car j’y touche que dalle..", specialty: "JavaScript", price: "56", city_name: "Lyon", user_id: user5.id)
 
+user6 = User.create!(email: "hugo@ta.com", first_name: "Hugo", last_name: "Mancini", password: "123456")
+p "#{user5.email} created"
+
+teacher5 = Teacher.create!(description: "Graduated from a business school, I worked for two years in a startup as business analyst and then as business developper. I then opened a bar with some close friends two years ago. Main interests are skateboarding, music and chess.", specialty: "RAILS", price: "56", city_name: "TLyon", user_id: user6.id)
 
 Booking.create!(user_id: user5.id, teacher_id: teacher3.id, date: "2021-12-17 00:00:00.000000000 +0000", accepted: true)
 p "booking created"
