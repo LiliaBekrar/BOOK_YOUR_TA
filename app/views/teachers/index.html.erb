@@ -2,6 +2,10 @@
 <div class="main-container d-flex">
 
   <div class="cards-teachers-list">
+    <% if @teachers == []  %>
+    <h4>Sorry no teachers match your search..</h4>
+    <%= link_to 'Back',  root_path %>
+    <%  end %>
     <% @teachers.each do |teacher| %>
       <% unless teacher.user == current_user  %>
       <div class="cards-teachers d-flex flex-column align-items-center">

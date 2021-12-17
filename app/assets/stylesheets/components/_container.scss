@@ -1,3 +1,9 @@
 .main-container {
   display: flex;
 }
+
+
+.yield_wrap {
+  height: fit-content;
+  min-height: calc(100vh - 498px);
+}
