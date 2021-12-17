@@ -7,20 +7,22 @@
 
 
     <% @teachers.each do |teacher| %>
-      <div class="cards-teachers d-flex flex-column align-items-center">
-          <%if teacher.photo.attached? %>
-            <%= cl_image_tag("#{teacher.photo.key}.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
-          <% else %>
-            <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false)%>
-          <% end %>
-            <p><strong><%= teacher.user.first_name %></strong></p>
-            <p> <%= teacher.specialty %></p>
-          </div>
-          <div class="cards-price-teacher d-flex align-self-center">
-            <p class="d-flex align-items-center p-2"><%= teacher.price %></p>
-          </div>
-          <%= link_to 'Open Ticket',  teacher_path(teacher), class: 'btn btn-danger'%>
-      </div>
+      <% unless teacher.user == current_user  %>
+        <div class="cards-teachers d-flex flex-column align-items-center">
+            <%if teacher.photo.attached? %>
+              <%= cl_image_tag("#{teacher.photo.key}.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+            <% else %>
+              <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false)%>
+            <% end %>
+              <p><strong><%= teacher.user.first_name %></strong></p>
+              <p> <%= teacher.specialty %></p>
+            </div>
+            <div class="cards-price-teacher d-flex align-self-center">
+              <p class="d-flex align-items-center p-2"><%= teacher.price %></p>
+            </div>
+            <%= link_to 'Open Ticket',  teacher_path(teacher), class: 'btn btn-danger'%>
+        </div>
+      <% end %>
     <% end %>
     <div>
       <div class="card-booking bookings-user my-4">
