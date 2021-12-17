@@ -1,10 +1,9 @@
-<div>
 
 
   <h2 class="text-center">Hello <%= current_user.first_name %> ! </h2>
 
     <div class="card-booking-title align-self-center">
-      <h2>MY <span class="highlight-red">BOOKINGS</span></h2>
+      <h2 class="text-center">MY <span class="highlight-red">BOOKINGS</span></h2>
     </div>
     <% if current_user.bookings == [] %>
         <h4>Sorry you don't have any booking yet...</h4>
@@ -12,7 +11,7 @@
 
     <% else %>
 
-    <div class="booking-non-accepted">
+    <div class="booking_wrap booking-non-accepted">
       <h3>Waiting confirm</h3>
       <% current_user.bookings.each do |booking| %>
         <% unless booking.accepted  %>
@@ -50,7 +49,7 @@
       <% end %>
     </div>
 
-    <div class="booking-accepted">
+    <div class="booking_wrap booking-accepted">
       <h3>Accepted</h3>
       <% current_user.bookings.each do |booking| %>
         <% if booking.accepted  %>
@@ -100,7 +99,7 @@
         <%= link_to 'Became a TA', new_teacher_path%>
 
       <% else %>
-        <div class="teacher-non-accepted">
+        <div class="booking_wrap teacher-non-accepted">
           <h3>Waiting for your confirm</h3>
           <% @teacher.bookings.each do |booking| %>
 
@@ -128,7 +127,6 @@
 
                   <div class="card-booking-price px-3">
                     <p> Price <%= booking.teacher.price %>€ </p>
-                    <p> confirm : <%= booking.accepted %></p>
                   </div>
 
                   <div class="card-booking-price px-3">
@@ -143,7 +141,7 @@
           <% end %>
         </div>
 
-        <div class="teacher-accepted">
+        <div class="booking_wrap teacher-accepted">
           <h3>Accepted</h3>
           <% @teacher.bookings.each do |booking| %>
 
@@ -167,7 +165,6 @@
 
                   <div class="card-booking-price px-3">
                     <p> Price <%= booking.teacher.price %>€ </p>
-                    <p> confirm : <%= booking.accepted %></p>
                   </div>
 
                   <div class="card-booking-price px-3">
