@@ -24,6 +24,7 @@ const initMapbox = () => {
         element.style.backgroundSize = 'contain';
         element.style.width = '25px';
         element.style.height = '25px';
+        element.style.border-radius = "50%";
 
         new mapboxgl.Marker(element)
           .setLngLat([marker.lng, marker.lat])
