@@ -1,4 +1,4 @@
-<div class="container">
+<div class="">
 
   <h2 class="text-center">Hello <%= current_user.first_name %> ! </h2>
 
@@ -13,7 +13,7 @@
 
     <% else %>
 
-    <div class="non-accepted">
+    <div class="booking-non-accepted">
       <h3>Waiting confirm</h3>
       <% current_user.bookings.each do |booking| %>
         <% unless booking.accepted  %>
@@ -21,14 +21,15 @@
 
 
 
-          <div class="card-booking-avatar">
-            <%if booking.teacher.photo.attached? %>
-              <%= cl_image_tag("#{booking.teacher.photo.key}.jpg") %>
-            <% else %>
-              <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg")%>
-            <% end %>
-          </div>
+              <div class="card-booking-avatar">
+                <%if booking.teacher.photo.attached? %>
+                  <%= cl_image_tag("#{booking.teacher.photo.key}.jpg") %>
+                <% else %>
+                  <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg")%>
+                <% end %>
+              </div>
 
+              <div class="card-booking-info d-flex">
 
                 <div class="card-booking-detail px-3">
                   <p> My appointment with <%= booking.teacher.user.first_name %> <%= booking.teacher.user.last_name %> </p>
@@ -48,7 +49,7 @@
       <% end %>
     </div>
 
-    <div class="accepted">
+    <div class="booking-accepted">
       <h3>Accepted</h3>
       <% current_user.bookings.each do |booking| %>
         <% if booking.accepted  %>
@@ -87,7 +88,7 @@
   </div>
 
 
-  <div class="card-booking bookings-user d-flex flex-column my-4 align-items-center">
+  <div class="card-booking d-flex flex-column my-4 align-items-center">
 
 
       <div class="card-booking-title align-self-center">
@@ -98,7 +99,7 @@
         <%= link_to 'Became a TA', new_teacher_path%>
 
       <% else %>
-        <div class="non-accepted">
+        <div class="teacher-non-accepted">
           <h3>Waiting for your confirm</h3>
           <% @teacher.bookings.each do |booking| %>
 
@@ -141,7 +142,7 @@
           <% end %>
         </div>
 
-        <div class="accepted">
+        <div class="teacher-accepted">
           <h3>Accepted</h3>
           <% @teacher.bookings.each do |booking| %>
 
