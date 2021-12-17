@@ -2,6 +2,10 @@
 <div class="main-container d-flex">
 
   <div class="cards-teachers-list">
+    <% if @teachers == []  %>
+    <h4>Sorry no teachers match your search..</h4>
+    <%= link_to 'Back',  root_path %>
+    <%  end %>
     <% @teachers.each do |teacher| %>
       <% unless teacher.user == current_user  %>
       <div class="cards-teachers d-flex flex-column align-items-center">
@@ -9,7 +13,7 @@
           <%if teacher.photo.attached? %>
             <%= cl_image_tag("#{teacher.photo.key}.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
           <% else %>
-            <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false)%>
+            <%= image_tag("TomLeTrain.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
           <% end %>
           <p><strong><%= teacher.user.first_name %></strong></p>
           <p> <%= teacher.specialty %></p>
