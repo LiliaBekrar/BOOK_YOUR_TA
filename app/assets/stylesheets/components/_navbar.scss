@@ -13,6 +13,7 @@
   color: white;
 }
 
+
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
@@ -39,7 +40,15 @@
 }
 
 .test {
-  height: 100vh;
+  height: 90vh;
+}
+
+.navbar-brand h3 {
+  margin: 0 0 0 25px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23px;
 }
 
 // NAVBAR AUTRES PAGES
@@ -73,3 +82,6 @@
   border-radius: 50%;
 }
 
+.btn-stop {
+  margin-right: 40px;
+}

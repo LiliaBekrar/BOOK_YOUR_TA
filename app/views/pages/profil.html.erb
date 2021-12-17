@@ -1,8 +1,7 @@
-<div class="">
+<div>
+
 
   <h2 class="text-center">Hello <%= current_user.first_name %> ! </h2>
-
-  <div class="card-booking bookings-user d-flex flex-column my-4 align-items-center">
 
     <div class="card-booking-title align-self-center">
       <h2>MY <span class="highlight-red">BOOKINGS</span></h2>
@@ -21,13 +20,15 @@
 
 
 
-              <div class="card-booking-avatar">
-                <%if booking.teacher.photo.attached? %>
-                  <%= cl_image_tag("#{booking.teacher.photo.key}.jpg") %>
-                <% else %>
-                  <%= cl_image_tag("snnvw9r2am4ln8d8psfu_bzaor1.jpg")%>
-                <% end %>
-              </div>
+
+          <div class="card-booking-avatar">
+            <%if booking.teacher.photo.attached? %>
+              <%= cl_image_tag("#{booking.teacher.photo.key}.jpg") %>
+            <% else %>
+            <%= image_tag("TomLeTrain.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+            <% end %>
+          </div>
+
 
               <div class="card-booking-info d-flex">
 
@@ -85,7 +86,7 @@
 
 
     <% end %>
-  </div>
+
 
 
   <div class="card-booking d-flex flex-column my-4 align-items-center">
@@ -178,6 +179,5 @@
           <% end %>
         </div>
       <% end %>
-  </div>
 
 </div>
