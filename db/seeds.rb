@@ -47,8 +47,9 @@ teacher4 = Teacher.create!(description: "Née à Marseille, travaille dans le tr
 user6 = User.create!(email: "hugo@ta.com", first_name: "Hugo", last_name: "Mancini", password: "123456")
 p "#{user5.email} created"
 
-teacher5 = Teacher.create!(description: "Graduated from a business school, I worked for two years in a startup as business analyst and then as business developper. I then opened a bar with some close friends two years ago. Main interests are skateboarding, music and chess.", specialty: "RAILS", price: "56", city_name: "TLyon", user_id: user6.id)
-
+teacher5 = Teacher.new(description: "Graduated from a business school, I worked for two years in a startup as business analyst and then as business developper. I then opened a bar with some close friends two years ago. Main interests are skateboarding, music and chess.", specialty: "RAILS", price: "56", city_name: "TLyon", user_id: user6.id)
+teacher5.photo.attach(io: File.open(Rails.root.join('app/assets/images/Hugo_mancini.jpg')), filename: 'Hugo_mancini.jpg')
+teacher5.save!
 Booking.create!(user_id: user5.id, teacher_id: teacher3.id, date: "2021-12-17 00:00:00.000000000 +0000", accepted: true)
 p "booking created"
 
