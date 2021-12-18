@@ -29,7 +29,7 @@
         <% if Teacher.find_by(user_id: current_user.id).nil? %>
           <%= image_tag("TomLeTrain.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
         <% elsif Teacher.find_by(user_id: current_user.id).photo.attached? %>
-          <%= cl_image_tag("#{Teacher.find_by(user_id: current_user.id).photo.key}.jpg") %>
+          <%= cl_image_tag("#{Teacher.find_by(user_id: current_user.id).photo.key}.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
         <% else %>
           <%= image_tag("TomLeTrain.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
         <% end %>
