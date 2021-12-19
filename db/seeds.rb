@@ -30,7 +30,6 @@ p "#{teacher.user.first_name} created"
 user3 = User.create(email: "Pilou@ta.com", first_name: "Pierre Loic", last_name: "Pichon", password: "123456")
 p "#{user3.email} created"
 
-
 teacher3 = Teacher.new(description: "Data Scientist / Ruby on Rails hobbyist Call me Pilou!", specialty: "SQL", price: "60", city_name: "Lille", user_id: user3.id)
 teacher3.photo.attach(io: File.open(Rails.root.join('app/assets/images/Pilou.jpg')), filename: 'Pilou.jpg')
 teacher3.save

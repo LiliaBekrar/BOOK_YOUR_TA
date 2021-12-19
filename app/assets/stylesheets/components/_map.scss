@@ -8,5 +8,17 @@
 }
 
 .mapboxgl-canvas {
+  // margin-top: 40px;
+}
+
+.marker p {
+  position: absolute;
+  bottom: -35px;
+  text-align: center;
+  font-size: 15px;
+  color: rgba($color: #000000, $alpha: 0.7)
+}
+
+#map {
   margin-top: 40px;
 }
