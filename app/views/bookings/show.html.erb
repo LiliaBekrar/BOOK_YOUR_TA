@@ -9,7 +9,11 @@
     <div class="card-booking-body d-flex align-items-center">
 
       <div class="card-booking-avatar">
-        <%= image_tag("TomLeTrain.jpg") %>
+        <%if booking.teacher.photo.attached? %>
+          <%= cl_image_tag("#{@booking.teacher.photo.key}.jpg") %>
+        <% else %>
+          <%= image_tag("TomLeTrain.jpg") %>
+        <% end %>
       </div>
 
       <div class="card-booking-info d-flex">
