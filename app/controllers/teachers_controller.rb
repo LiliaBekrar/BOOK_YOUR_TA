@@ -14,7 +14,7 @@ class TeachersController < ApplicationController
 
     @markers = @teachers.geocoded.map do |teacher|
       if teacher.photo.attached?
-        image = Cloudinary::Utils.cloudinary_url(teacher.photo.key).gsub('upload', 'upload/v1/development')
+        image = Cloudinary::Utils.cloudinary_url(teacher.photo.key).gsub('upload', 'upload/v1/production') # use production/devlopment according to your environment
       else
         image = Cloudinary::Utils.cloudinary_url("snnvw9r2am4ln8d8psfu_bzaor1.jpg").gsub('upload', 'upload/v1/development')
       end
@@ -22,7 +22,8 @@ class TeachersController < ApplicationController
       {
         lat: teacher.latitude,
         lng: teacher.longitude,
-        image_url: image
+        image_url: image,
+        city_name: teacher.city_name
       }
     end
   end

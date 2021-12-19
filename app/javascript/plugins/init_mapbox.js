@@ -28,8 +28,8 @@ const initMapbox = () => {
         element.style.borderRadius = '50%';
         element.style.objectFit = 'cover';
         element.style.position = 'absolute';
-        element.style.top = '35px';
-
+        // element.style.top = '35px';
+        element.innerHTML = `<p>${marker.city_name}<p>`;
         new mapboxgl.Marker(element)
           .setLngLat([marker.lng, marker.lat])
           .addTo(map);
