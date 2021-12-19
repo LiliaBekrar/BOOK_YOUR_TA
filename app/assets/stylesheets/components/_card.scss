@@ -52,7 +52,6 @@
 .card-speciality .card-speciality-infos {
   padding: 16px;
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
   position: relative;
 }
@@ -64,17 +63,13 @@
   width: 40px;
 }
 
-.cards-home {
-  display : flex;
-  justify-content: space-around;
-  flex-direction: column;
-}
 
 
 .card-speciality  {
   height: fit-content;
+  width: 30vw;
   padding: 0 0 20px 0;
-  margin: 0 20px;
+  margin: 0 30px;
   color: white;
 }
 
