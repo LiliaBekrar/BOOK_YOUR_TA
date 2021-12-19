@@ -63,25 +63,39 @@ h2 {
 //   margin: 10px;
 // }
 
+h1 {
+  font-family: Raleway;
+  font-weight: bold;
+  font-size: 48px;
+}
 // PAGE FORM TA
-p.form-paragraph {
+form {
   font-family: Raleway;
   font-style: normal;
-  font-size: 20px;
-  margin-bottom: 35px;
+
+  p {
+    font-size: 20px;
+    margin-bottom: 35px;
+  }
+}
+
+input[type=submit] {
+  color: rgb(0, 0, 0);
+  padding: 8px 24px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  margin: 30px 0 30px 0;
+
+    :hover {
+      background: #ededed;
+      color: rgb(0, 0, 0);
+    }
 }
 
 // PAGE FORM EDIT TA
 
-#title-edit-form {
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 48px;
-}
-
-// BUTTON EDIT
-
-.form-actions .btn-wagon {
-  margin: 30px 0 30px 0;
-}
+// .form-actions .btn-wagon {
+//   margin: 30px 0 30px 0;
+// }
