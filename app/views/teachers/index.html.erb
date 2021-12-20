@@ -19,6 +19,9 @@
         <div class="name">
           <p><strong><%= teacher.user.first_name %></strong></p>
         </div>
+        <div class="city_name">
+        <p><strong><%= teacher.city_name %></strong></p>
+        </div>
         <div class="specialty">
           <p> <%= teacher.specialty %></p>
         </div>
@@ -29,8 +32,10 @@
           <p><strong><%= teacher.price.floor %> €</strong></p>
         </div>
 
-          <%= link_to 'Show Details',  teacher_path(teacher)%>
-          <%= link_to 'Book Me!',  new_teacher_booking_path(teacher), class: 'btn btn-success'%>
+          <%= link_to 'Tell me more',  teacher_path(teacher), class: "small"%>
+          <%= link_to new_teacher_booking_path(teacher),  :class => "btn btn-danger" do  %>
+            Book ME !
+          <%end %>
       </div>
       <% end %>
     <% end %>
