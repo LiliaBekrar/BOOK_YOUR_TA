@@ -8,23 +8,29 @@
     <%  end %>
     <% @teachers.each do |teacher| %>
       <% unless teacher.user == current_user  %>
-      <div class="cards-teachers d-flex flex-column align-items-center">
-        <div>
+      <div class="cards-teachers d-flex flex-column align-items-center justify-content-center">
+        <div class="avatar-teacher">
           <%if teacher.photo.attached? %>
-            <%= cl_image_tag("#{teacher.photo.key}.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+            <%= cl_image_tag("#{teacher.photo.key}.jpg") %>
           <% else %>
-            <%= image_tag("TomLeTrain.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+            <%= image_tag("TomLeTrain.jpg") %>
           <% end %>
+        </div>
+        <div class="name">
           <p><strong><%= teacher.user.first_name %></strong></p>
+        </div>
+        <div class="specialty">
           <p> <%= teacher.specialty %></p>
+        </div>
+        <div class="description">
+         <small><i class="fas fa-quote-left mr-2"></i><%= teacher.description %></small>
         </div>
         <div class="cards-price-teacher d-flex align-self-center">
           <p><strong><%= teacher.price.floor %> €</strong></p>
         </div>
-        <div>
-          <%= link_to 'Show Details',  teacher_path(teacher), class: 'btn btn-danger my-1'%>
+
+          <%= link_to 'Show Details',  teacher_path(teacher)%>
           <%= link_to 'Book Me!',  new_teacher_booking_path(teacher), class: 'btn btn-success'%>
-        </div>
       </div>
       <% end %>
     <% end %>
