@@ -8,7 +8,7 @@
     <%  end %>
     <% @teachers.each do |teacher| %>
       <% unless teacher.user == current_user  %>
-      <div class="cards-teachers d-flex flex-column align-items-center justify-content-center">
+      <div class="cards-teachers d-flex flex-column align-items-center justify-content-around">
         <div class="avatar-teacher">
           <%if teacher.photo.attached? %>
             <%= cl_image_tag("#{teacher.photo.key}.jpg") %>
