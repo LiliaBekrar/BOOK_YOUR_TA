@@ -86,6 +86,12 @@ class TeachersController < ApplicationController
     @user = current_user
   end
 
+  def set_icon_specialty
+    @icons = {
+
+    }
+  end
+
   # Only allow a list of trusted parameters through.
   def teacher_params
     params.require(:teacher).permit(:description, :price, :specialty, :city_name, :latitude, :longitude, :photo,  :user_id)

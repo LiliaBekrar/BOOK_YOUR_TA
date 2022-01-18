@@ -1,8 +1,11 @@
 <div class="container">
 
-  <div class="card-teacher teachers-user d-flex  my-4 justify-content-center">
+        <h1> <span class="highlight-red"><%= @teacher.user.first_name %></span> <%= @teacher.user.last_name%></h1>
+        <h4><%= @teacher.city_name %></h4>
 
-      <div class="card-teacher-body d-flex my-2 px-3">
+  <div class="card-teacher teachers-user d-flex justify-content-center">
+
+      <div class="card-teacher-body d-flex">
         <div class="card-teacher-avatar">
           <%if @teacher.photo.attached? %>
             <%= cl_image_tag("#{@teacher.photo.key}.jpg") %>
@@ -13,14 +16,13 @@
 
         <div class="card-teacher-info d-flex">
 
-          <div class="card-teacher-detail px-3">
-            <p> <%= @teacher.user.first_name %> <%= @teacher.user.last_name%></p>
+          <div class="card-teacher-detail">
             <p> <%= @teacher.description %></p>
             <p>What I propose...</p>
             <p> <%= @teacher.specialty %></p>
           </div>
 
-          <div class="card-teacher-price px-3">
+          <div class="card-teacher-price">
             <p> Price <%= @teacher.price %>€ </p>
           </div>
 
