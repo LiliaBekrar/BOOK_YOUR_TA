@@ -16,21 +16,27 @@
 
         <div class="card-teacher-info d-flex">
 
-          <div class="card-teacher-detail">
-            <p> <%= @teacher.description %></p>
-            <p>What I propose...</p>
-            <p> <%= @teacher.specialty %></p>
-          </div>
 
-          <div class="card-teacher-price">
+          <div class="card-teacher-price-button d-flex justify-content-end justify-self-start">
             <p> Price <%= @teacher.price %>€ </p>
-          </div>
 
           <% if @teacher.user == current_user %>
             <%= link_to 'Stop being TA', teacher_path(@teacher), method: :delete, class: "btn btn-danger align-self-start", data: { confirm: 'Are you sure you want to stop being a TA ?' } %>
           <% else %>
             <%= link_to 'Book This TA',  new_teacher_booking_path(@teacher), class: 'btn btn-success align-self-start' %>
           <% end %>
+          </div>
+
+          <div class="card-teacher-detail">
+            <p> <%= @teacher.description %></p>
+            <p> <strong> What I propose... </strong></p>
+            <% if File.exist? Rails.root.join('app', 'assets', 'images', "#{@teacher.specialty.gsub(" ","_")}.svg") %>
+              <%= image_tag("#{@teacher.specialty.gsub(" ","_")}.svg", title: "#{@teacher.specialty} icon", alt: "#{@teacher.specialty} icon", :class => "icon-specialty")%>
+            <% else %>
+              <p> <%= @teacher.specialty %></p>
+            <% end %>
+          </div>
+
 
         </div>
 
