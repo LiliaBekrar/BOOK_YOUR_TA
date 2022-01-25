@@ -66,7 +66,11 @@ class TeachersController < ApplicationController
 
   def search_method(params)
     if params["city_name"] == ""
-      Teacher.search(params["specialty"])
+      if params["specialty"] == ""
+        Teacher.all
+      else
+        Teacher.search(params["specialty"])
+      end
     elsif params["specialty"] == ""
       Teacher.search(params["city_name"])
     else
@@ -80,6 +84,12 @@ class TeachersController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def set_icon_specialty
+    @icons = {
+
+    }
   end
 
   # Only allow a list of trusted parameters through.
