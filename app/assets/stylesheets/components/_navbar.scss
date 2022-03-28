@@ -7,11 +7,11 @@
   z-index: 3;
   position: sticky;
   top: 0;
+  * {
+    color: white!important;
+  }
 }
 
-.navbar-lewagon > a {
-  color: white;
-}
 
 
 .nav-link {
