@@ -213,5 +213,14 @@
 
 .card-teacher-info {
   flex-direction: column;
-  padding: 1rem;
+  padding: 0 1.5rem;
+  width: 90%;
+  justify-content: space-around;
+  min-height: 300px;
+}
+
+.card-teacher-price-button {
+  justify-content: space-between;
+
+  div { margin: 1rem;}
 }
