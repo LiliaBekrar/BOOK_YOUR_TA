@@ -65,8 +65,8 @@ Projet réalisé en **2 à 3 semaines intensives**, dans une ambiance studieuse 
 |-------------|------|
 | <img src="https://avatars.githubusercontent.com/u/22682853?v=4" width="40"/> [**Lilia Bekrar**](https://github.com/LiliaBekrar) | Lead développeuse back-end 🛠️ |
 | <img src="https://avatars.githubusercontent.com/u/91216872?v=4" width="40"/> [**Maewenn Drean**](https://github.com/mdrean) | Lead développeuse front-end 🎨 |
-| <img src="https://avatars.githubusercontent.com/u/90203307?v=4" width="40"/> [**Isabelle Douin**](https://github.com/IsabelleDouin) | Développeuse back-end 🔧 |
-| <img src="https://avatars.githubusercontent.com/u/92380180?v=4" width="40"/> [**Georgia Drai**](https://github.com/georgiadrai) | Développeuse front-end 🎨 |
+| <img src="https://avatars.githubusercontent.com/u/90203307?v=4" width="40"/> [**Isabelle Douin**](https://github.com/IsaDou) | Développeuse back-end 🔧 |
+| <img src="https://avatars.githubusercontent.com/u/92380180?v=4" width="40"/> [**Georgia Drai**](https://github.com/lumlum08) | Développeuse front-end 🎨 |
 ---
 
 ## 🤓 À propos
