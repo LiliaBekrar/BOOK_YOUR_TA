@@ -51,11 +51,54 @@ J’ai notamment :
 ---
 
 ## 📸 Aperçu
-
-![image](https://github.com/user-attachments/assets/4e6d87ed-fd20-4b5f-bc42-45c44cd90db1)
-
+Notre interface a été pensée pour offrir une expérience simple, fluide et amusante.  
+Voici quelques écrans extraits de la maquette Figma utilisée pour guider le développement de l'application :
 
 ---
+
+### 🏠 Page d’accueil – Recherche par spécialité et ville
+
+<img src="./screenshots/homepage_search.png" alt="Recherche d’un TA" width="700"/>
+
+---
+
+### 📅 Page de confirmation de réservation
+
+<img src="./screenshots/confirmation_reservation.png" alt="Confirmation de réservation" width="700"/>
+
+---
+
+### 👩‍🏫 Liste des TAs disponibles + carte interactive
+
+<img src="./screenshots/liste_TAs_map.png" alt="Liste des Teacher Assistants avec carte" width="700"/>
+
+---
+
+### 📋 Profil d’un TA avec calendrier, compétences et tarif
+
+<img src="./screenshots/profil_TA.png" alt="Profil d’un TA" width="700"/>
+
+---
+
+### 🙋 Espace utilisateur – Mes réservations
+
+<img src="./screenshots/mes_bookings_user.png" alt="Mes Bookings" width="700"/>
+
+---
+
+### ✍️ Formulaire d’inscription – Devenir TA
+
+<img src="./screenshots/formulaire_TA.png" alt="Formulaire devenir TA" width="700"/>
+
+---
+
+### 🧾 Espace TA – Mes interventions passées
+
+<img src="./screenshots/mes_interventions_TA.png" alt="Mes interventions côté TA" width="700"/>
+
+---
+
+> 🧠 Cette maquette a été conçue pour **s’inspirer du fonctionnement d’Airbnb**, adaptée avec humour à notre réalité du Wagon : des tickets, des bugs, et beaucoup d’entraide.
 
 ## 🤝 L’équipe du chaos organisé
 
