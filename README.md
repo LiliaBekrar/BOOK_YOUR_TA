@@ -1,58 +1,60 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+![GitHub repo size](https://img.shields.io/github/repo-size/LiliaBekrar/BOOK_YOUR_TA?style=flat-square)
+![Ruby version](https://img.shields.io/badge/Ruby-3.0.0-red?style=flat-square)
+![Rails](https://img.shields.io/badge/Rails-6.1.4.1-red?style=flat-square)
+![PostgreSQL](https://img.shields.io/badge/DB-PostgreSQL-blue?style=flat-square)
+![License](https://img.shields.io/github/license/LiliaBekrar/BOOK_YOUR_TA?style=flat-square)
+
 <h1 align="center">📚 BOOK_YOUR_TA – Le AirBnB des profs débordés 👨‍🏫</h1>
 
 <p align="center">
-  Projet réalisé dans le cadre du <strong>bootcamp Le Wagon – Batch #776</strong><br/>
-  🌟 Parce qu'on avait souvent besoin d'un prof... mais pas toujours un prof de dispo !
+  Projet full-stack conçu au <strong>bootcamp Le Wagon – Batch #776</strong><br/>
+  💥 Quand t’as 3 tickets ouverts, 2 bugs critiques et 0 TA dispo...
 </p>
 
 ---
 
-## 🧠 Le concept
+## 🤯 Le pitch
 
-BOOK_YOUR_TA est une appli de réservation... mais pas pour des logements 🏡  
-Ici, on réserve un **Teacher Assistant (TA)** !  
-Un clin d’œil à notre quotidien de bootcampeurs où, face à nos bugs, un prof surbooké devait courir de ticket en ticket.  
-On s’est donc dit : *“Et si on en faisait une marketplace ?”* 😄
+BOOK_YOUR_TA, c’est l’application que notre batch aurait rêvé d’avoir pour survivre aux journées d’autonomie.  
+Une marketplace de Teacher Assistants (TAs) pour booker de l’aide quand tu croules sous les bugs et les merges qui pètent 😅
 
 ---
 
-## ✨ Fonctionnalités principales
+## ✨ Fonctionnalités
 
-- 🔍 Recherche de TAs par ville
-- 🗓 Réservation d’un créneau d’aide
-- 💬 Système de commentaires
-- 👤 Page profil pour chaque TA
-- 📷 Avatar custom (fun assuré !)
-- 🎭 Logique de rôles : User & TA
+- 🔍 Recherche de TAs par ville et spécialité
+- 🗓 Réservation avec calendrier interactif
+- 👤 Fiches profil claires avec spécialités, tarifs, et avatar
+- 💬 Commentaires post-presta
+- 📷 Upload de photos via Cloudinary
+- 🔐 Authentification et rôles (user / TA)
 
 ---
 
 ## 🛠️ Stack technique
 
-- **Ruby on Rails** – back-end solide et MVC friendly
-- **PostgreSQL** – pour stocker les bugs et les disponibilités 😅
-- **Devise** – pour l’authentification
-- **Bootstrap** – pour un design simple & responsive
-- **Cloudinary + Active Storage** – pour les photos des super-profs 📸
+- ⚙️ **Ruby on Rails** – MVC, ActiveRecord & Devise
+- 🧠 **PostgreSQL** – pour gérer les users, bookings & TA
+- 🌐 **Bootstrap** – responsive et rapide à intégrer
+- ☁️ **Cloudinary** – stockage des avatars
+- 📦 **Yarn / Webpack** – gestion des assets
+- 🧪 **Rspec** (en cours) – pour des tests automatisés futurs
 
 ---
 
 ## 👩‍💻 Mon rôle
 
-J’ai occupé le rôle de **lead développeuse back-end** sur ce projet.  
-J’ai notamment :
+> Lead back-end développeuse aka bug chasseresse officielle 🐛
 
-- mis en place la structure MVC,
-- géré les modèles, les relations et les routes,
-- intégré l’authentification avec Devise,
-- collaboré activement avec l’équipe front-end.
+- Architecture MVC (models/controllers/routes/views)
+- Gestion des relations (User ↔ Bookings ↔ TA)
+- Intégration Devise pour les rôles & authentification
+- Collaboration avec le front pour fluidifier les données & l’UX
 
 ---
 
 ## 📸 Aperçu
 Notre interface a été pensée pour offrir une expérience simple, fluide et amusante.  
-Voici quelques écrans extraits de la maquette Figma utilisée pour guider le développement de l'application :
 
 ---
 
