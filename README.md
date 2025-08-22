@@ -1,8 +1,9 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/LiliaBekrar/BOOK_YOUR_TA?style=flat-square)
-![Ruby version](https://img.shields.io/badge/Ruby-3.0.0-red?style=flat-square)
+![Ruby version](https://img.shields.io/badge/Ruby-2.7.4-red?style=flat-square)
 ![Rails](https://img.shields.io/badge/Rails-6.1.4.1-red?style=flat-square)
 ![PostgreSQL](https://img.shields.io/badge/DB-PostgreSQL-blue?style=flat-square)
 ![License](https://img.shields.io/github/license/LiliaBekrar/BOOK_YOUR_TA?style=flat-square)
+
 
 <h1 align="center">📚 BOOK_YOUR_TA – Le AirBnB des profs débordés 👨‍🏫</h1>
 
